@@ -1,0 +1,292 @@
+/* reset the browser defaults */
+*,
+a,
+abbr,
+body,
+button,
+canvas,
+footer,
+h1,
+h2,
+h3,
+header,
+html,
+li,
+main,
+p,
+small,
+strong,
+ul {
+    background: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+a,
+abbr {
+    text-decoration: none;
+}
+
+abbr {
+    cursor: help;
+}
+
+button {
+    cursor: pointer;
+}
+
+footer,
+header,
+main {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+/* define the global variables */
+:root {
+    --black: #000;
+    --green: #4Caf50;
+    --grey: #212121;
+    --white: #fff;
+}
+
+/* set the elements styles */
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: var(--grey);
+    color: var(--white);
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    z-index: 0;
+}
+
+a {
+    color: var(--green);
+}
+
+strong {
+    font-weight: 700;
+}
+
+header {
+    z-index: 3;
+}
+
+h1,
+footer {
+    padding: 0 1rem;
+}
+
+h1,
+h2,
+h3,
+footer p {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    text-shadow: 0.125rem 0.125rem var(--black);
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 0.5rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+}
+
+main,
+canvas {
+    left: 50%;
+    top: 50%;
+    width: 505px;
+}
+
+main,
+canvas,
+footer {
+    position: absolute;
+}
+
+main {
+    height: 536px;
+    margin: -253px 0 0 -252.5px;
+    z-index: 2;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 2rem);
+}
+
+footer p {
+    font-family: "PT Sans", sans-serif;
+    padding: 0 0 1rem 0;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+abbr {
+    border-bottom: 0.0625rem dashed var(--black);
+}
+
+canvas {
+    margin: -303px 0 0 -252.5px;
+    height: 606px;
+    z-index: 1;
+}
+
+/* set the IDs styles */
+#skip,
+#play,
+#setting li {
+    border-radius: 0.25rem;
+}
+
+#skip,
+#setting {
+    position: absolute;
+}
+
+#skip {
+    background: var(--black);
+    color: var(--white) !important;
+    font-family: "PT Sans", sans-serif;
+    left: 1rem;
+    padding: 0.5rem;
+    top: -2rem;
+    transition: top 0.5s linear;
+    z-index: 1; /* TODO */
+}
+
+#skip:focus,
+#skip:hover,
+#skip:active {
+    top: 1rem;
+}
+
+#play {
+    background: var(--green);
+    color: var(--white);
+    margin: 1rem 0 0 0;
+    padding: 0.5rem 1.5rem;
+    text-shadow: 0.125rem 0.125rem var(--black);
+}
+
+#setting {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#setting ul {
+    margin: 1rem 0 0 0;
+    width: calc(505px + 4rem);
+}
+
+#setting li {
+    background-color: var(--black); /* TODO */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: block;
+    cursor: pointer;
+    float: left;
+    height: 171px;
+    margin: 0 1rem 0 0;
+    width: 101px;
+}
+
+#setting li[data-type="boy"] {
+    background-image: url(/images/char-boy.png);
+}
+
+#setting li[data-type="cat-girl"] {
+    background-image: url(/images/char-cat-girl.png);
+}
+
+#setting li[data-type="horn-girl"] {
+    background-image: url(/images/char-horn-girl.png);
+}
+
+#setting li[data-type="pink-girl"] {
+    background-image: url(/images/char-pink-girl.png);
+}
+
+#setting li[data-type="princess-girl"] {
+    background-image: url(/images/char-princess-girl.png);
+}
+
+#setting li:last-child {
+    margin: 0;
+}
+
+/* set the classes styles */
+.middle {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.top {
+    padding: 1rem 0 0 0;
+}
+
+.none {
+    display: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem 0.25rem 0 0;
+    font-size: 0.5rem;
+    padding: 1rem 1rem 1.5rem 1rem;
+    text-shadow: 0.125rem 0.125rem var(--black);
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|PT+Sans:400,700" rel="prefetch stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <title>Classic Arcade Game Clone</title>
+    </head>
+    <body>
+        <a href="#content" id="skip">Skip to <strong>Main Content</strong></a>
+        <header class="middle" role="banner">
+            <h1 class="uppercase">Classic Arcade Game Clone</h1>
+            <button class="uppercase" id="play">Play</button>
+        </header>
+        <div class="hidden uppercase" id="setting">
+            <h2>Choose Your Character</h2>
+            <ul>
+                <li class="character" data-type="boy">
+                    <h3>Boy</h3>
+                </li>
+                <li class="character" data-type="cat-girl">
+                    <h3>Cat Girl</h3>
+                </li>
+                <li class="character" data-type="horn-girl">
+                    <h3>Horn Girl</h3>
+                </li>
+                <li class="character" data-type="pink-girl">
+                    <h3>Pink Girl</h3>
+                </li>
+                <li class="character" data-type="princess-girl">
+                    <h3>Princess Girl</h3>
+                </li>
+            </ul>
+        </div>
+        <main class="hidden" id="content" role="main">
+            <div class="container">
+              <p class="left"><span class="uppercase">Level</span> <span id="level-counter"></span></p>
+              <p class="right"><span class="uppercase">Gems</span> x <span id="gems-counter"></span> <span class="uppercase">Lives</span> x <span id="lives-counter"></span></p>
+            </div>
+        </main>
+        <footer role="contentinfo">
+            <p><small>© <time>2018</time> <strong>Federico Moretti</strong>. Some rights reserved. Released under <a href="https://github.com/fedtti/classic-arcade-game-clone/blob/master/LICENSE" rel="license">a <abbr title="Massachusetts Institute of Technology">MIT</abbr> license</a>.</small></p>
+        </footer>
+        <script src="/js/resources.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/js/engine.js"></script>
+        <script src="/js/style.js"></script>
+    </body>
+</html>
