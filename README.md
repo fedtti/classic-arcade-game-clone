@@ -4,11 +4,11 @@ A Frogger clone in HTML, CSS, and JavaScript
 
 ## Getting Started
 
-In order to play the game, you may either try it online or run it locally (see [Installing](#installing)).
+In order to play the game, you may either [try it online](https://codepen.io/fedtti/full/pLwjao/) or run it locally (see [Installing](#installing)).
 
 ### Instructions
 
-Move around the lawn with the arrow keys to reach the water and start a new level, collecting gems and avoiding bugs. You have three lives.
+Move around the map with the arrow keys to reach the water and start a new level, collecting gems and avoiding bugs. You have three lives.
 
 ## Installing
 

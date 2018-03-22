@@ -2,16 +2,18 @@
 
 // define the sprites constants
 const constants = {
-    SPRITE_X_POSITIONS: [0, 50.5, 101, 151.5, 202, 252.5, 303, 353.5, 404],
     SPRITE_Y_POSITIONS: [81.5, 132, 182.5, 233, 283.5, 334, 384.5],
     // enemy-only constants
     ENEMY_WIDTH: 98,
     ENEMY_HEIGHT: 77,
+    ENEMY_Y_POSITIONS: [110.5, 149, 187.5, 226, 264.5, 303, 341.5, 380, 418.5],
     ENEMY_MIN_SPEED: 50,
     ENEMY_MAX_SPEED: 500,
     // gem-only constants
     GEM_WIDTH: 95,
     GEM_HEIGHT: 111,
+    GEM_X_POSITIONS: [3, 53.5, 104, 154.5, 205, 255.5, 306, 356.5, 407],
+    GEM_Y_POSITIONS: [25.5, 81, 136.5, 192, 247.5, 303, 358.5, 414, 469.5],
     // player-only constants
     PLAYER_DEFAULT_WIDTH: 67,
     PLAYER_DEFAULT_HEIGHT: 87,
@@ -78,8 +80,8 @@ class Enemies {
     spawn(num) {
         for (let i = 0; i < num; i++) {
             const spriteSpeed = getRandomInteger(constants.ENEMY_MIN_SPEED, constants.ENEMY_MAX_SPEED);
-            const enemyDefaultY = getRandomInteger(0, 8);
-            this.createdEnemies[allEnemies.length] = new Enemy(constants.SPRITE_Y_POSITIONS[enemyDefaultY], spriteSpeed);
+            const enemyDefaultY = getRandomInteger(0, 10);
+            this.createdEnemies[allEnemies.length] = new Enemy(constants.ENEMY_Y_POSITIONS[enemyDefaultY], spriteSpeed);
             allEnemies.push(this.createdEnemies[allEnemies.length]);
         }
     }
@@ -151,8 +153,8 @@ class Gems {
     spawn(num) {
         for (let i = 0; i < num; i++) {
             const gemDefaultX = getRandomInteger(0, 10);
-            const gemDefaultY = getRandomInteger(0, 8);
-            this.createdGems[allGems.length] = new Gem(constants.SPRITE_X_POSITIONS[gemDefaultX], constants.SPRITE_Y_POSITIONS[gemDefaultY]);
+            const gemDefaultY = getRandomInteger(0, 10);
+            this.createdGems[allGems.length] = new Gem(constants.GEM_X_POSITIONS[gemDefaultX], constants.SPRITE_Y_POSITIONS[gemDefaultY]);
             allGems.push(this.createdGems[allGems.length]);
         }
     }
@@ -193,26 +195,26 @@ class Player {
 
     // update the player
     update() {
-        this.playerCurrentX = this.x;
-        this.playerCurrentY = this.y;
+        this.x;
+        this.y;
     }
 
     // move the player
     move(key) {
         if (key === "left" && this.x > 50.5) {
-            this.x = this.playerCurrentX + -constants.PLAYER_STEP;
+            this.x += -constants.PLAYER_STEP;
         }
 
         if (key === "up" && this.y > 50.5) {
-            this.y = this.playerCurrentY + -constants.PLAYER_STEP;
+            this.y += -constants.PLAYER_STEP;
         }
 
         if (key === "right" && this.x < 421) {
-            this.x = this.playerCurrentX + constants.PLAYER_STEP;
+            this.x += constants.PLAYER_STEP;
         }
 
         if (key === "down" && this.y < 497) {
-            this.y = this.playerCurrentY + constants.PLAYER_STEP;
+            this.y += constants.PLAYER_STEP;
         }
     }
 
