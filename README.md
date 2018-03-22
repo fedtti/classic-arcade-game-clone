@@ -4,11 +4,15 @@ A Frogger clone in HTML, CSS, and JavaScript
 
 ## Getting Started
 
-In order to play the game, you have to run a local server.
+In order to play the game, you may either try it online or run it locally (see [Installing](#installing)).
+
+### Instructions
+
+Move around the lawn with the arrow keys to reach the water and start a new level, collecting gems and avoiding bugs. You have three lives.
 
 ## Installing
 
-While the @udacity mentors suggest using `SimpleHTTPServer` in Python, being a front-end developer I prefer the `http-server` package of Node.js.
+While the Udacity mentors suggest using `SimpleHTTPServer` in Python, being a front-end developer I prefer the `http-server` package of Node.js.
 
 ### Prerequisites
 
