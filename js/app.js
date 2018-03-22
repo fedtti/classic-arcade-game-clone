@@ -1,12 +1,23 @@
-// define the sprites coordinates
-const coordinates = {
-    spriteWidth: 101,
-    spriteHeight: 50.5,
-    spriteMinSpeed: 50,
-    spriteMaxSpeed: 500,
-    spritePositionsX: [0, 50.5, 101, 151.5, 202, 252.5, 303, 353.5, 404],
-    spritePositionsY: [81.5, 132, 182.5, 233, 283.5, 334, 384.5],
-    spriteMove: 50.5,
+"use strict";
+
+// define the sprites constants
+const constants = {
+    SPRITE_X_POSITIONS: [0, 50.5, 101, 151.5, 202, 252.5, 303, 353.5, 404],
+    SPRITE_Y_POSITIONS: [81.5, 132, 182.5, 233, 283.5, 334, 384.5],
+    // enemy-only constants
+    ENEMY_WIDTH: 98,
+    ENEMY_HEIGHT: 77,
+    ENEMY_MIN_SPEED: 50,
+    ENEMY_MAX_SPEED: 500,
+    // gem-only constants
+    GEM_WIDTH: 95,
+    GEM_HEIGHT: 111,
+    // player-only constants
+    PLAYER_DEFAULT_WIDTH: 67,
+    PLAYER_DEFAULT_HEIGHT: 87,
+    PLAYER_DEFAULT_X_POSITION: 219,
+    PLAYER_DEFAULT_Y_POSITION: 497,
+    PLAYER_STEP: 50.5
 };
 
 /**
@@ -29,9 +40,9 @@ class Enemy {
     // the enemy proprieties
     constructor(enemyDefaultY, spriteSpeed) {
         this.sprite = "/images/enemy-bug.png";
-        this.width = coordinates.spriteWidth;
-        this.height = coordinates.spriteHeight;
-        this.x = getRandomInteger(-1010, -101);
+        this.width = constants.ENEMY_WIDTH;
+        this.height = constants.ENEMY_HEIGHT;
+        this.x = getRandomInteger(-980, -98);
         this.y = enemyDefaultY;
         this.speed = spriteSpeed;
     }
@@ -66,9 +77,9 @@ class Enemies {
     // spawn the enemies
     spawn(num) {
         for (let i = 0; i < num; i++) {
-            const spriteSpeed = getRandomInteger(coordinates.spriteMinSpeed, coordinates.spriteMaxSpeed);
+            const spriteSpeed = getRandomInteger(constants.ENEMY_MIN_SPEED, constants.ENEMY_MAX_SPEED);
             const enemyDefaultY = getRandomInteger(0, 8);
-            this.createdEnemies[allEnemies.length] = new Enemy(coordinates.spritePositionsY[enemyDefaultY], spriteSpeed);
+            this.createdEnemies[allEnemies.length] = new Enemy(constants.SPRITE_Y_POSITIONS[enemyDefaultY], spriteSpeed);
             allEnemies.push(this.createdEnemies[allEnemies.length]);
         }
     }
@@ -96,8 +107,8 @@ class Gem {
     constructor(gemDefaultX, gemDefaultY) {
         const gemsColors = ["gem-blue", "gem-green", "gem-orange"];
         this.sprite = `/images/${gemsColors[getRandomInteger(0, 2)]}.png`;
-        this.width = coordinates.spriteWidth;
-        this.height = coordinates.spriteHeight;
+        this.width = constants.GEM_WIDTH;
+        this.height = constants.GEM_HEIGHT;
         this.x = gemDefaultX;
         this.y = gemDefaultY;
     }
@@ -141,7 +152,7 @@ class Gems {
         for (let i = 0; i < num; i++) {
             const gemDefaultX = getRandomInteger(0, 10);
             const gemDefaultY = getRandomInteger(0, 8);
-            this.createdGems[allGems.length] = new Gem(coordinates.spritePositionsX[gemDefaultX], coordinates.spritePositionsY[gemDefaultY]);
+            this.createdGems[allGems.length] = new Gem(constants.SPRITE_X_POSITIONS[gemDefaultX], constants.SPRITE_Y_POSITIONS[gemDefaultY]);
             allGems.push(this.createdGems[allGems.length]);
         }
     }
@@ -160,10 +171,6 @@ const gems = new Gems();
 // fix a resources.js issue
 let playerCharacter = "boy";
 
-// define the player position
-const playerDefaultY = 435;
-const playerDefaultX = 202;
-
 // set the lives counter
 const livesCounter = document.getElementById("lives-counter");
 
@@ -175,18 +182,13 @@ class Player {
     // the player proprieties
     constructor() {
         this.sprite = "/images/char-boy.png";
-        this.width = coordinates.spriteWidth;
-        this.height = coordinates.spriteHeight;
-        this.x = playerDefaultX;
-        this.y = playerDefaultY;
+        this.width = constants.PLAYER_DEFAULT_WIDTH;
+        this.height = constants.PLAYER_DEFAULT_HEIGHT;
+        this.x = constants.PLAYER_DEFAULT_X_POSITION;
+        this.y = constants.PLAYER_DEFAULT_Y_POSITION;
         this.lives = 3;
         livesCounter.innerHTML = this.lives;
         this.reset();
-    }
-
-    // setup the player
-    setup() {
-      this.sprite = `/images/char-${playerCharacter}.png`;
     }
 
     // update the player
@@ -197,20 +199,20 @@ class Player {
 
     // move the player
     move(key) {
-        if (key === "left" && this.x > 0) {
-            this.x = this.playerCurrentX + -coordinates.spriteMove;
+        if (key === "left" && this.x > 50.5) {
+            this.x = this.playerCurrentX + -constants.PLAYER_STEP;
         }
 
-        if (key === "up" && this.y > 0) {
-            this.y = this.playerCurrentY + -coordinates.spriteMove;
+        if (key === "up" && this.y > 50.5) {
+            this.y = this.playerCurrentY + -constants.PLAYER_STEP;
         }
 
-        if (key === "right" && this.x < 404) {
-            this.x = this.playerCurrentX + coordinates.spriteMove;
+        if (key === "right" && this.x < 421) {
+            this.x = this.playerCurrentX + constants.PLAYER_STEP;
         }
 
-        if (key === "down" && this.y < 435) {
-            this.y = this.playerCurrentY + coordinates.spriteMove;
+        if (key === "down" && this.y < 497) {
+            this.y = this.playerCurrentY + constants.PLAYER_STEP;
         }
     }
 
@@ -228,8 +230,8 @@ class Player {
 
     // reset the player
     reset() {
-        this.x = playerDefaultX;
-        this.y = playerDefaultY;
+        this.x = constants.PLAYER_DEFAULT_X_POSITION;
+        this.y = constants.PLAYER_DEFAULT_Y_POSITION;
     }
 
     // render the player

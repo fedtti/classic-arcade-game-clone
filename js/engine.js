@@ -177,7 +177,7 @@ const Engine = (function(global) {
         });
 
         // check if the player hit the water
-        if (player.y < 31) {
+        if (player.y < 93) {
             level.update();
         }
     };
@@ -196,10 +196,6 @@ const Engine = (function(global) {
         "/images/gem-green.png",
         "/images/gem-orange.png",
         "/images/char-boy.png",
-        "/images/char-cat-girl.png",
-        "/images/char-horn-girl.png",
-        "/images/char-pink-girl.png",
-        "/images/char-princess-girl.png"
     ]);
     Resources.onReady(init);
     global.ctx = ctx;
