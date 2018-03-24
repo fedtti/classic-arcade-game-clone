@@ -12,7 +12,7 @@ Move around the map with the arrow keys to reach the water and start a new level
 
 ## Installing
 
-While the Udacity mentors suggest using `SimpleHTTPServer` in Python, being a front-end developer I prefer the `http-server` package of Node.js.
+While the Udacity mentors suggest using `SimpleHTTPServer` in Python, being a front-end developer I prefer the `http-server` package of Node.js. If you know what you’re doing, it’s up to you! :wink:
 
 ### Prerequisites
 
