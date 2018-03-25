@@ -1,4 +1,3 @@
-/* reset the browser defaults */
 *,
 a,
 abbr,
@@ -15,263 +14,147 @@ p,
 small,
 strong,
 ul {
-    background: transparent;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    vertical-align: baseline;
-}
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  vertical-align: baseline; }
 
 a,
 abbr {
-    text-decoration: none;
-}
+  text-decoration: none; }
 
 abbr {
-    cursor: help;
-}
+  cursor: help; }
 
 button {
-    cursor: pointer;
-}
+  cursor: pointer; }
 
 footer,
 header,
 main {
-    display: block;
-}
+  display: block; }
 
 li {
-    list-style: none;
-}
+  list-style: none; }
 
-/* define the global variables */
-:root {
-    --black: #000;
-    --green: #4Caf50;
-    --grey: #212121;
-    --white: #fff;
-}
-
-/* set the elements styles */
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
+html {
+  width: 100%; }
 
 body {
-    background: var(--grey);
-    color: var(--white);
-    font-family: "Press Start 2P", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    z-index: 0;
-}
-
-a {
-    color: var(--green);
-}
-
-strong {
-    font-weight: 700;
-}
+  background: #212121;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  width: 100%;
+  z-index: 0; }
 
 header {
-    z-index: 3;
-}
-
-h1,
-footer {
-    padding: 0 1rem;
-}
-
-h1,
-footer p {
-    text-align: center;
-}
-
-h1 {
-    font-size: 1.5rem;
-    text-shadow: 0.125rem 0.125rem var(--black);
-}
-
-main,
-canvas {
-    left: 50%;
-    top: 50%;
-    width: 505px;
-}
-
-main,
-canvas,
-footer {
-    position: absolute;
-}
+  z-index: 3; }
 
 main {
-    height: 536px;
-    margin: -253px 0 0 -252.5px;
-    z-index: 2;
-}
+  height: 536px;
+  left: 50%;
+  margin: -253px 0 0 -252.5px;
+  position: absolute;
+  top: 50%;
+  width: 505px;
+  z-index: 2; }
 
 footer {
-    left: 0;
-    bottom: 0;
-    width: calc(100% - 2rem);
-}
-
-footer p {
-    font-family: "PT Sans", sans-serif;
+  bottom: 0;
+  left: 0;
+  padding: 0 1rem;
+  position: absolute;
+  width: calc(100% - 2rem); }
+  footer p {
+    font-family: "Open Sans", sans-serif;
     padding: 0 0 1rem 0;
-}
+    text-align: center; }
 
-small {
-    font-size: 0.75rem;
-}
-
-abbr {
-    border-bottom: 0.0625rem dashed var(--black);
-}
+h1 {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  text-shadow: 0.125rem 0.125rem #000; }
 
 canvas {
-    margin: -303px 0 0 -252.5px;
-    height: 606px;
-    z-index: 1;
-}
+  height: 606px;
+  left: 50%;
+  margin: -303px 0 0 -252.5px;
+  position: absolute;
+  top: 50%;
+  width: 505px;
+  z-index: 1; }
 
-/* set the IDs styles */
-#skip,
-#play,
-#setting li {
-    border-radius: 0.25rem;
-}
+a {
+  color: #4Caf50; }
 
-#skip,
-#setting {
-    position: absolute;
-}
+strong {
+  font-weight: 700; }
+
+small {
+  font-size: 0.75rem; }
+
+abbr {
+  border-bottom: 0.0625rem dashed #000; }
 
 #skip {
-    background: var(--black);
-    color: var(--white) !important;
-    font-family: "PT Sans", sans-serif;
-    left: 1rem;
-    padding: 0.5rem;
-    top: -2rem;
-    transition: top 0.5s linear;
-    z-index: 1; /* TODO */
-}
-
-#skip:focus,
-#skip:hover,
-#skip:active {
-    top: 1rem;
-}
+  background: #000;
+  border-radius: 0.25rem;
+  color: #fff !important;
+  left: 1rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: -2rem;
+  transition: top 0.5s linear; }
+  #skip:active, #skip:focus, #skip:hover {
+    top: 1rem; }
 
 #play {
-    background: var(--green);
-    color: var(--white);
-    margin: 1rem 0 0 0;
-    padding: 0.5rem 1.5rem;
-    text-shadow: 0.125rem 0.125rem var(--black);
-}
-
-#setting {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-#setting ul {
-    margin: 1rem 0 0 0;
-    width: calc(505px + 4rem);
-}
-
-#setting li {
-    background-color: var(--black); /* TODO */
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    display: block;
-    cursor: pointer;
-    float: left;
-    height: 171px;
-    margin: 0 1rem 0 0;
-    width: 101px;
-}
-
-#setting li[data-type="boy"] {
-    background-image: url(/images/char-boy.png);
-}
-
-#setting li[data-type="cat-girl"] {
-    background-image: url(/images/char-cat-girl.png);
-}
-
-#setting li[data-type="horn-girl"] {
-    background-image: url(/images/char-horn-girl.png);
-}
-
-#setting li[data-type="pink-girl"] {
-    background-image: url(/images/char-pink-girl.png);
-}
-
-#setting li[data-type="princess-girl"] {
-    background-image: url(/images/char-princess-girl.png);
-}
-
-#setting li:last-child {
-    margin: 0;
-}
-
-/* set the classes styles */
-.middle {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    width: 100%;
-}
-
-.top {
-    padding: 1rem 0 0 0;
-}
-
-.none {
-    display: none;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.hidden {
-    visibility: hidden;
-}
+  background: #4Caf50;
+  border-radius: 0.25rem;
+  color: #fff;
+  margin: 1rem 0 0 0;
+  padding: 0.5rem 1.5rem;
+  text-shadow: 0.125rem 0.125rem #000; }
 
 .container {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 0.25rem 0.25rem 0 0;
-    font-size: 0.5rem;
-    padding: 1rem 1rem 1.5rem 1rem;
-    text-shadow: 0.125rem 0.125rem var(--black);
-}
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem 0.25rem 0 0;
+  font-size: 0.5rem;
+  padding: 1rem 1rem 1.5rem 1rem;
+  text-shadow: 0.125rem 0.125rem #000; }
+
+.hidden {
+  visibility: hidden; }
 
 .left {
-    float: left;
-}
+  float: left; }
+
+.middle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%; }
+
+.none {
+  display: none; }
 
 .right {
-    float: right;
-}
+  float: right; }
+
+.top {
+  padding: 1rem 0 0 0; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+/*# sourceMappingURL=style.css.map */

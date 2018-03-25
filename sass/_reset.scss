@@ -1,0 +1,49 @@
+// reset the browser default styles
+*,
+a,
+abbr,
+body,
+button,
+canvas,
+footer,
+h1,
+header,
+html,
+li,
+main,
+p,
+small,
+strong,
+ul {
+    background: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+a,
+abbr {
+    text-decoration: none;
+}
+
+abbr {
+    cursor: help;
+}
+
+button {
+    cursor: pointer;
+}
+
+footer,
+header,
+main {
+    display: block;
+}
+
+li {
+    list-style: none;
+}

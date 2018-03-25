@@ -1,0 +1,160 @@
+// import /sass/_reset.scss
+@import "reset";
+
+// define the global variables
+$black: #000;
+$cursive: "Press Start 2P", cursive;
+$green: #4Caf50;
+$grey: #212121;
+$sans-serif: "Open Sans", sans-serif;
+$white: #fff;
+
+//
+html {
+    width: 100%;
+}
+
+body {
+    background: $grey;
+    color: $white;
+    font-family: $cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    width: 100%;
+    z-index: 0;
+}
+
+// header
+header {
+    z-index: 3;
+}
+
+// main
+main {
+    height: 536px;
+    left: 50%;
+    margin: -253px 0 0 -252.5px;
+    position: absolute;
+    top: 50%;
+    width: 505px;
+    z-index: 2;
+}
+
+// footer
+footer {
+    bottom: 0;
+    left: 0;
+    padding: 0 1rem;
+    position: absolute;
+    width: calc(100% - 2rem);
+
+    p {
+        font-family: $sans-serif;
+        padding: 0 0 1rem 0;
+        text-align:center;
+    }
+}
+
+// headings
+h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    text-shadow: 0.125rem 0.125rem $black;
+}
+
+canvas {
+    height: 606px;
+    left: 50%;
+    margin: -303px 0 0 -252.5px;
+    position: absolute;
+    top: 50%;
+    width: 505px;
+    z-index: 1;
+}
+
+a {
+    color: $green;
+}
+
+strong {
+    font-weight: 700;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+abbr {
+    border-bottom: 0.0625rem dashed $black;
+}
+
+// IDs
+#skip {
+    background: $black;
+    border-radius: 0.25rem;
+    color: $white !important;
+    left: 1rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: -2rem;
+    transition: top 0.5s linear;
+
+    &:active,
+    &:focus,
+    &:hover {
+        top: 1rem;
+    }
+}
+
+#play {
+    background: $green;
+    border-radius: 0.25rem;
+    color: $white;
+    margin: 1rem 0 0 0;
+    padding: 0.5rem 1.5rem;
+    text-shadow: 0.125rem 0.125rem $black;
+}
+
+// classes
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem 0.25rem 0 0;
+    font-size: 0.5rem;
+    padding: 1rem 1rem 1.5rem 1rem;
+    text-shadow: 0.125rem 0.125rem $black;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.left {
+    float: left;
+}
+
+.middle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.none {
+    display: none;
+}
+
+.right {
+    float: right;
+}
+
+.top {
+    padding: 1rem 0 0 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}

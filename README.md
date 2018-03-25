@@ -31,6 +31,10 @@ http-server
 
 Open a browser and point it to `http://localhost:8080/`.
 
+## Contributing
+
+Please, follow [the Udacity Frontend Nanodegree Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/) for HTML, CSS, JavaScript and Git.
+
 ## License
 
 © 2018 **Federico Moretti**. Some rights reserved. Released under [a MIT license](LICENSE).
