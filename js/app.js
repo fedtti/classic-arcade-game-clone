@@ -41,7 +41,7 @@ let allEnemies = [];
 class Enemy {
     // the enemy proprieties
     constructor(enemyDefaultY, spriteSpeed) {
-        this.sprite = "/images/enemy-bug.png";
+        this.sprite = "/img/enemy-bug.png";
         this.width = constants.ENEMY_WIDTH;
         this.height = constants.ENEMY_HEIGHT;
         this.x = getRandomInteger(-980, -98);
@@ -108,7 +108,7 @@ class Gem {
     // the gem proprieties
     constructor(gemDefaultX, gemDefaultY) {
         const gemsColors = ["gem-blue", "gem-green", "gem-orange"];
-        this.sprite = `/images/${gemsColors[getRandomInteger(0, 2)]}.png`;
+        this.sprite = `/img/${gemsColors[getRandomInteger(0, 2)]}.png`;
         this.width = constants.GEM_WIDTH;
         this.height = constants.GEM_HEIGHT;
         this.x = gemDefaultX;
@@ -183,7 +183,7 @@ const livesCounter = document.getElementById("lives-counter");
 class Player {
     // the player proprieties
     constructor() {
-        this.sprite = "/images/char-boy.png";
+        this.sprite = "/img/char-boy.png";
         this.width = constants.PLAYER_DEFAULT_WIDTH;
         this.height = constants.PLAYER_DEFAULT_HEIGHT;
         this.x = constants.PLAYER_DEFAULT_X_POSITION;
