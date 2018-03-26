@@ -56,14 +56,6 @@ footer {
     }
 }
 
-// headings
-h1 {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-    text-align: center;
-    text-shadow: 0.125rem 0.125rem $black;
-}
-
 canvas {
     height: 606px;
     left: 50%;
@@ -74,16 +66,24 @@ canvas {
     z-index: 1;
 }
 
+// headings
+h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    text-shadow: 0.125rem 0.125rem $black;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
 a {
     color: $green;
 }
 
 strong {
     font-weight: 700;
-}
-
-small {
-    font-size: 0.75rem;
 }
 
 abbr {
