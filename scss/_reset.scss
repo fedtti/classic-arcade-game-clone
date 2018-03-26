@@ -1,20 +1,21 @@
-// reset the browser default styles
+// reset the browser defaults
 *,
-a,
-abbr,
+html,
 body,
-button,
-canvas,
+header,
+main,
 footer,
 h1,
-header,
-html,
+canvas,
+ul,
 li,
-main,
 p,
 small,
+a,
 strong,
-ul {
+abbr
+abbr,
+button {
     background: transparent;
     border: 0;
     font: inherit;
@@ -23,6 +24,17 @@ ul {
     padding: 0;
     outline: 0;
     vertical-align: baseline;
+}
+
+header,
+main,
+footer,
+canvas {
+    display: block;
+}
+
+li {
+    list-style: none;
 }
 
 a,
@@ -36,14 +48,4 @@ abbr {
 
 button {
     cursor: pointer;
-}
-
-footer,
-header,
-main {
-    display: block;
-}
-
-li {
-    list-style: none;
 }
